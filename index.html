@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    
+</head>
+<body>
+    <table id="tabela">
+        <thead>
+           <tr>
+            <th></th>
+            <th>Nome</th>
+            <th>Data de Nascimento</th>
+            <th>Idade</th>
+           </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <span id="mais-velho"></span>
+    <span id="mais-novo"></span>
+</body>
+</html>
+<script type="text/javascript">
+    var tabela = document.querySelector("#tbody");
+    var MaisVelha = document.querySelector("#mais-velho");
+    var MaisNova = document.querySelector("#mais-novo"); 
+
+    listaDeNomes.forEach(function(pessoa, index) {
+    if((index + 1) % 2 == 0){
+        var dados = "<tr class='par'> ";
+    }else{
+        var dados = "<tr class= 'impar'>";
+    }
+    dados += "<td>" + (index + 1) + "</td>"; 
+    dados += "<td>" + pessoa['nome'].toUpperCase() + "</td>";
+    dados += "<td>" + pessoa['data-de-nascimento'] + "</td>";
+    dados += "<td>" + pessoa['idade'] + "</td>";
+    
+    dados += "</tr>";
+    tabela.innerHTML += dados; 
+    if((index + 1) > 1){
+    MaisVelha.textContent = pessoaMaisVelha.toUpperCase() + " é a pessoa mais velha";
+    MaisNova.textContent =  pessoaMaisNova.toUpperCase() + " é a pessoa mais nova";
+    }
+
+    
+    });
+   
+        
+</script>
